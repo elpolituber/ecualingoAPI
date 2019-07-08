@@ -22,7 +22,11 @@ app.get('*', (req, res) => res.status(200).send({
 
 /* server.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);
-}); */
+}); 
 server.listen(port,() => {
   console.log(`Server running at ${app.get('port')}`);
+}) */
+app.listen(port, function() {
+  console.log('Our app is running on http://localhost:' + port);
 });
+
