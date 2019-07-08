@@ -20,6 +20,9 @@ app.get('*', (req, res) => res.status(200).send({
   message: 'Welcome to the .',
 }));
 
-server.listen(port, hostname, () => {
+/* server.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);
+}); */
+server.listen(port,() => {
+  console.log(`Server running at ${app.get('port')}`);
 });
