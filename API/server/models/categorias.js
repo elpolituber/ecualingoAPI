@@ -1,10 +1,14 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const Categorias = sequelize.define('Categorias', {
+  const categorias = sequelize.define('categorias', {
     nombreCategoria: DataTypes.STRING
   }, {});
-  Categorias.associate = function(models) {
+  categorias.associate = function(models) {
     // associations can be defined here
+    categorias.belongsTo(models.compararPalabras, {
+      foreignKey: 'idCompararPalabras',
+      onDelete: 'CASCADE'
+    });
   };
-  return Categorias;
+  return categorias;
 };

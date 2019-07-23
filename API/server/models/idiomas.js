@@ -1,14 +1,14 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const Idiomas = sequelize.define('Idiomas', {
+  const idiomas = sequelize.define('idiomas', {
     tipoIdioma: DataTypes.STRING
   }, {});
-  Idiomas.associate = function(models) {
+  idiomas.associate = function(models) {
     // associations can be defined here
-    Idiomas.blongsTo(models.TraductorPalabras, {
+    idiomas.belongsTo(models.traductorPalabras, {
       foreignKey: 'idTraductorPalabras',
       onDelete: 'CASCADE'
     });
   };
-  return Idiomas;
+  return idiomas;
 };
