@@ -9,6 +9,11 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: 'idCompararPalabras',
       onDelete: 'CASCADE'
     });
+
+    categorias.belongsTo(models.usuarios, {
+      foreignKey: 'idUsuarios',
+      onDelete: 'CASCADE'
+    });
   };
   return categorias;
 };
