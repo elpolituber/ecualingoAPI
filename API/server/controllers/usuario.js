@@ -15,10 +15,10 @@ class Usuarios {
         idCategorias,
         idNiveles
         })
-        .then(usario => res.status(201).send({
+        .then(usuario => res.status(201).send({
           success: true,
           message: 'Usuario creado existosamente',
-          usario
+          usuario
         }))
     }
 }
