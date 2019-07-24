@@ -6,7 +6,8 @@ class Usuarios {
   static signUp(req, res) {
     const { nombre, nombreUsuario, correo, contrasena } = req.body
     const { idCategorias, idNiveles } = req.params
-      return Usuario.create({
+      return Usuario
+      .create({
         nombre,
         nombreUsuario,
         correo,
@@ -16,7 +17,7 @@ class Usuarios {
         })
         .then(usario => res.status(201).send({
           success: true,
-          message: 'Usuario ${nombre} a sido creado existosamente',
+          message: 'Usuario creado existosamente',
           usario
         }))
     }
