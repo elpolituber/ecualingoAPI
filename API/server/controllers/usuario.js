@@ -3,10 +3,11 @@ import model from '../models';
 const { Usuario } = model;
 
 class Usuarios {
-  static signUp(req, res) {
+    static registrar(req, res) {
     const { nombre, nombreUsuario, correo, contrasena } = req.body
     const { idCategorias, idNiveles } = req.params
-      return Usuario.create({
+    return Usuario
+        .create({
         nombre,
         nombreUsuario,
         correo,
@@ -15,11 +16,10 @@ class Usuarios {
         idNiveles
         })
         .then(usuario => res.status(201).send({
-          success: true,
-          message: 'Usuario creado existosamente',
-          usuario
+        message: `El usuario ${nombre} a sido creado exitosamente`,
+        usuario
         }))
     }
 }
 
-export default Usuarios;
+export default Usuarios

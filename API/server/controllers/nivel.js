@@ -14,6 +14,13 @@ class Niveles {
           nivel
         }))
     }
+
+    static list(req, res) {
+      return Nivel
+        .findAll()
+        .then(nivel => res.status(200).send(nivel));
+    }
+
 }
 
 export default Niveles;

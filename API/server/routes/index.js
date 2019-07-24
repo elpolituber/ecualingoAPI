@@ -11,8 +11,9 @@ import Categorias from '../controllers/categoria';
           app.get('/api', (req, res) => res.status(200).send({
             message: 'Bienvenido al API de EcuaLingo',
           }));
+          app.get('/api/niveles', Niveles.list);
 
-          app.post('/api/usuarios', Usuarios.signUp); 
+          app.post('/api/usuarios', Usuarios.registrar); 
           app.post('/api/traductorPalabras', TraductorPalabras.signUp); 
           app.post('/api/palabrasOriginales', PalabrasOriginales.signUp); 
           app.post('/api/niveles', Niveles.signUp); 
