@@ -4,13 +4,18 @@ const { CompararPalabra } = model;
 
 class CompararPalabras {
   static signUp(req, res) {
-    const { nombreCategoria } = req.body
+    const { imagen } = req.body
+    const { idPalabrasOriginales, idTraductorPalabras, idCategorias } = req.params
       return CompararPalabra.create({
-        nombreCategoria
+        imagen,
+        idPalabrasOriginales,
+        idTraductorPalabras,
+        idCategorias
         })
         .then(compararPalabra => res.status(201).send({
+          var: result = idPalabrasOriginales.localeCompare(idTraductorPalabras),
           success: true,
-          message: 'La categoria ${nombreCategoria} a sido creada existosamente',
+          message: 'El resultado es: ${result}',
           compararPalabra
         }))
     }

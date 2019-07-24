@@ -1,4 +1,10 @@
 import Usuarios from '../controllers/usuario';
+import TraductorPalabras from '../controllers/traductorPalabra';
+import PalabrasOriginales from '../controllers/palabraOriginal';
+import Niveles from '../controllers/nivel';
+import Idiomas from '../controllers/idioma';
+import CompararPalabras from '../controllers/compararPalabra';
+import Categorias from '../controllers/categoria';
 
         export default (app) => {
 
@@ -7,4 +13,10 @@ import Usuarios from '../controllers/usuario';
           }));
 
           app.post('/api/usuarios', Usuarios.signUp); 
+          app.post('/api/traductorPalabras', TraductorPalabras.signUp); 
+          app.post('/api/palabrasOriginales', PalabrasOriginales.signUp); 
+          app.post('/api/niveles', Niveles.signUp); 
+          app.post('/api/idiomas', Idiomas.signUp); 
+          app.post('/api/compararPalabras', CompararPalabras.signUp); 
+          app.post('/api/categorias', Categorias.signUp);
         };

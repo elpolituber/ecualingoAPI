@@ -6,8 +6,7 @@ class Usuarios {
   static signUp(req, res) {
     const { nombre, nombreUsuario, correo, contrasena } = req.body
     const { idCategorias, idNiveles } = req.params
-      return Usuario
-      .create({
+      return Usuario.create({
         nombre,
         nombreUsuario,
         correo,
